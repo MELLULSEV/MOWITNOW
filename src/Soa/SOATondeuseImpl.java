@@ -30,6 +30,7 @@ public class SOATondeuseImpl implements SOATondeuse{
 		
 		Integer idInstructionItem = 0;
 		Integer ParcoursNbItems = 0;
+		boolean isPriseEnCompteAutresTondeuses = false;
 
 		for(Tondeuse tondeuseEnCours : tondeuses) {
 			
@@ -40,7 +41,11 @@ public class SOATondeuseImpl implements SOATondeuse{
 				
 				while ((isAbsValid(tondeuseEnCours, AbsMax))&&(isOrdoValid(tondeuseEnCours, OrdoMax))&&(!tondeuseEnCours.isStop())&&(Double.compare(idInstructionItem, ParcoursNbItems)<0)) {
 					
-					tondeuseEnCours = avance(tondeuseEnCours,idInstructionItem);
+					if (!isPriseEnCompteAutresTondeuses) {
+						tondeuseEnCours = avance(tondeuseEnCours,idInstructionItem);
+					} else {
+						tondeuseEnCours = avance(tondeuseEnCours,idInstructionItem, tondeuses);
+					}
 					
 					idInstructionItem++;
 					
@@ -82,6 +87,10 @@ public class SOATondeuseImpl implements SOATondeuse{
 			monteOuDescendDuneCase(tondeuseEnCours);
 			
 			avanceOuReculeDuneCase(tondeuseEnCours);
+			
+			//TODO
+			//Si le paramètre d'entrée "listeTondeuses" est renseigné, rechercher dans cette liste une tondeuse 
+			//qui sera déjà présente à la position calculée. Si c'est le cas, setStop(true)	
 			
 			return tondeuseEnCours;
 		
