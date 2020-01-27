@@ -1,7 +1,10 @@
 # MOWITNOW
 MOWITNOW
+
 Bonjour voici mon projet MowItNow
+
 Il consiste à déplacer des tondeuses placées sur un terrain délimité (1 carré avec des abcisses et des ordonnées, les max sont envoyées dans la 1ere ligne du fichier). Elles se déplacent grâce à des commandes envoyées dans un fichier.
+
 J'ai choisi le format .csv avec comme séparateur ";". 
 IMPORTANT : Pour le test, le fichier de commandes MowItNow.csv attaché au projet est à placer dans un répertoire C:/MowItNow/
 Le programme fait avancer chaque tondeuse en traitant les séquences de commandes de déplacement : A (avance d'une case en fonction de orientation de départ) , G (1/2 tour vers la gauche) , D (demi-tour vers la droite))
