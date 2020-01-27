@@ -15,9 +15,9 @@ public class SOATondeuseImpl implements SOATondeuse{
 	final DAOTondeuse daoTondeuse = new DAOTondeuseImpl();
 
 	@Override
-	public void parcoursTondeuses() {
+	public void parcoursTondeuses(String NomDuFichier) {
 
-		final List<Tondeuse> tondeuses = daoTondeuse.chargeTondeuses();
+		final List<Tondeuse> tondeuses = daoTondeuse.chargeTondeuses(NomDuFichier);
 		Integer OrdoMax = daoTondeuse.recupereOrdoMax();
 		Integer AbsMax = daoTondeuse.recupereAbsMax();
 		

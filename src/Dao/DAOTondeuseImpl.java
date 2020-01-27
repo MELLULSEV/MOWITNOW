@@ -15,13 +15,13 @@ public class DAOTondeuseImpl implements DAOTondeuse{
 	private static Integer ABS_MAX;
 	private static Integer ORDO_MAX;
 	
-	private List<Tondeuse> lireFichierEntree() throws IOException {
+	private List<Tondeuse> lireFichierEntree(String NomDuFichier) throws IOException {
 		
 		List<Tondeuse> listeDesTondeuses = new ArrayList<Tondeuse>();
 
 		try
 		{
-		   String chemin = "C:/MowItNow/MowItNow.csv";
+		   String chemin = NomDuFichier;
 		   BufferedReader fichier_source = new BufferedReader(new FileReader(chemin));
 		   String chaine;
 		   int i = 1;
@@ -30,7 +30,7 @@ public class DAOTondeuseImpl implements DAOTondeuse{
 		   while((chaine = fichier_source.readLine())!= null)
 		   {
 
-		        String[] tabChaine = chaine.split(";");
+		        String[] tabChaine = chaine.split(" ");
 		        
 		        if (i==1) {
 		        	
@@ -76,13 +76,13 @@ public class DAOTondeuseImpl implements DAOTondeuse{
 	}
 
 	@Override
-	public List<Tondeuse> chargeTondeuses() {
+	public List<Tondeuse> chargeTondeuses(String NomDuFichier) {
 		//
 		
 		List<Tondeuse> listeDesTondeuses = new ArrayList<Tondeuse>();
 		
 		try {
-			listeDesTondeuses = lireFichierEntree();
+			listeDesTondeuses = lireFichierEntree(NomDuFichier);
 			
 		} catch (IOException e) {
 			

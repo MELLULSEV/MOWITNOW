@@ -9,7 +9,7 @@ public class MowItNow {
 	{
 		final SOATondeuse soaTondeuse = new SOATondeuseImpl();
 		
-		soaTondeuse.parcoursTondeuses();
+		soaTondeuse.parcoursTondeuses(args[0]);
 		
 	}
 
