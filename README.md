@@ -20,4 +20,4 @@ Le programme envoie un output lorsque la tondeuse traitée ne peut plus avancer,
 
 4-La tondeuse rencontre une autre tondeuse sur la position calculée par le programme (option présente mais non traitée dans mon 1er commit)
 
-5-L'output est constitué du nom de la tondeuse arrêtée, des abcisses et ordonnées de sa position et de son orientation.
+L'output est constitué du nom de la tondeuse arrêtée, des abcisses et ordonnées de sa position et de son orientation.
